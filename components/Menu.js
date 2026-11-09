@@ -1,91 +1,101 @@
+import Link from 'next/link';
 import React from 'react'
+import { IoHomeSharp } from "react-icons/io5";
+import { FaChalkboardTeacher, FaPoll, FaUserCheck } from "react-icons/fa";
+import { PiStudentBold } from 'react-icons/pi';
+import { RiParentFill } from 'react-icons/ri';
+import { MdMessage, MdOutlineAssignmentInd, MdOutlineSubject } from 'react-icons/md';
+import { SiGoogleclassroom } from 'react-icons/si';
+import { BookOpen, Calendar, Calendar1, CircleUser, FileSearchCorner, LogOut, Settings } from 'lucide-react';
+import { TfiAnnouncement } from 'react-icons/tfi';
+
 
 const menuItems = [
   {
     title: "MENU",
     items: [
       {
-        icon: "/home.png",
+        icon: <IoHomeSharp />,
         label: "Home",
         href: "/",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
-        icon: "/teacher.png",
+        icon: <FaChalkboardTeacher />,
         label: "Teachers",
-        href: "/list/teachers",
+        href: "/teacher",
         visible: ["admin", "teacher"],
       },
       {
-        icon: "/student.png",
-        label: "Students",
-        href: "/list/students",
+        icon: <PiStudentBold />,
+        label: "Student",
+        href: "/student",
         visible: ["admin", "teacher"],
       },
       {
-        icon: "/parent.png",
-        label: "Parents",
-        href: "/list/parents",
+        icon: <RiParentFill />,
+        label: "Parent",
+        href: "/parent",
         visible: ["admin", "teacher"],
       },
       {
-        icon: "/subject.png",
-        label: "Subjects",
-        href: "/list/subjects",
+        icon: <MdOutlineSubject />,
+        label: "Subject",
+        href: "/subject",
         visible: ["admin"],
       },
       {
-        icon: "/class.png",
+        icon: <SiGoogleclassroom />,
         label: "Classes",
-        href: "/list/classes",
+        href: "/class",
         visible: ["admin", "teacher"],
       },
       {
-        icon: "/lesson.png",
+        icon: <BookOpen />,
         label: "Lessons",
-        href: "/list/lessons",
+        href: "/lesson",
         visible: ["admin", "teacher"],
       },
       {
-        icon: "/exam.png",
+        icon: <FileSearchCorner />,
         label: "Exams",
-        href: "/list/exams",
+        href: "/exam",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
-        icon: "/assignment.png",
+        icon: <MdOutlineAssignmentInd />,
         label: "Assignments",
-        href: "/list/assignments",
+        href: "/assignment",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
-        icon: "/result.png",
+        icon: <FaPoll />,
         label: "Results",
-        href: "/list/results",
+        href: "/result",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
-        icon: "/attendance.png",
+        icon: <FaUserCheck />,
         label: "Attendance",
-        href: "/list/attendance",
+        href: "/attendance",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
-        icon: "/calendar.png",
+        icon: <Calendar1 />,
         label: "Events",
-        href: "/list/events",
+        href: "/event",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
-        icon: "/message.png",
+        icon: <MdMessage />,
         label: "Messages",
-        href: "/list/messages",
+        href: "/message",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
-        icon: "/announcement.png",
+        icon: <TfiAnnouncement />,
         label: "Announcements",
-        href: "/list/announcements",
+        href: "/announcement",
         visible: ["admin", "teacher", "student", "parent"],
       },
     ],
@@ -94,19 +104,19 @@ const menuItems = [
     title: "OTHER",
     items: [
       {
-        icon: "/profile.png",
+        icon: <CircleUser />,
         label: "Profile",
         href: "/profile",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
-        icon: "/setting.png",
+        icon: <Settings />,
         label: "Settings",
-        href: "/settings",
+        href: "/setting",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
-        icon: "/logout.png",
+        icon: <LogOut />,
         label: "Logout",
         href: "/logout",
         visible: ["admin", "teacher", "student", "parent"],
@@ -118,15 +128,28 @@ const menuItems = [
 
 const Menu = () => {
   return (
-    <div>
+    <div className="mt-4 text-sm">
       {menuItems.map((i) => (
-        <div className="" key={i.title}>
-          {/* Add your item content here, for example: */}
-          <span>{i.title}</span>
+        <div className="flex flex-col gap-2 mt-4"  key={i.title}>
+          
+          <span className="hidden lg:block text-gray-400 font-medium px-2">
+            {i.title}
+          </span>
+
+        
+          {i.items.map((item) => (
+            <Link
+              href={item.href}
+              key={item.label}
+              className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-1.5 md:px-2 rounded-md hover:bg-lamaSkyLight"
+            >
+              <span> {item.icon} </span>
+              <span className="hidden m-0 lg:block ">{item.label}</span>
+            </Link>
+          ))}
         </div>
       ))}
     </div>
   );
 };
-
 export default Menu;
