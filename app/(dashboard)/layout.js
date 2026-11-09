@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import Menu from '../../components/Menu'
+import Navbar from '@/components/Navbar'
 
 const layout = ({ children }) => {
   return (
@@ -19,10 +20,12 @@ const layout = ({ children }) => {
   
     </div>
      
-     
+      <div className='flex flex-col flex-1'>
+        <Navbar />
      <div className='flex-1 bg-white p-4 overflow-y-auto'>
        {children}
      </div>
+      </div>
 
     {/* Right */}
     <div className='w-[20%] xl:w-[25%] bg-blue-50 p-4 overflow-y-auto hidden xl:block'>R</div>
