@@ -4,6 +4,7 @@ import Menu from '../../components/Menu'
 import Navbar from '@/components/Navbar'
 
 const layout = ({ children }) => {
+
   return (
     <div className='h-screen flex'>
        {/* left */}
@@ -25,12 +26,8 @@ const layout = ({ children }) => {
      <div className='flex-1 bg-white p-4 overflow-y-auto'>
        {children}
      </div>
-      </div>
-
-    {/* Right */}
-    <div className='w-[20%] xl:w-[25%] bg-blue-50 p-4 overflow-y-auto hidden xl:block'>R</div>
-    
-    </div>  
+      </div>    
+</div>  
   )
 }
 
