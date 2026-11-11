@@ -12,7 +12,7 @@ const layout = ({ children }) => {
       <div>
         <Link href="/" className='flex items-center justify-center lg:justify-start gap-2'>
           <img src="/logo.png" alt="logo" width={32}/>
-          <span className='hidden lg:block font-bold'>SchoolLama</span>
+          <span className='hidden lg:block font-bold'>Jtofunmi Institution</span>
         </Link>
 
         <Menu />

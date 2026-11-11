@@ -4,6 +4,7 @@ const ParentPage = () => {
   return (
     <div>
       Parent
+      
     </div>
   )
 }

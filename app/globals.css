@@ -128,3 +128,36 @@
     @apply font-sans;
   }
 }
+
+.react-calendar {
+  width: 100% !important;
+  background-color: rgb(240, 232, 232) !important;
+  border:none !important;
+  font-family: inherit;
+}
+
+.react-calendar__navigation button {
+  color: rgb(251, 0, 0) !important;
+  font-weight: 900 !important;
+}
+
+.react-calendar__month-view__weekdays {
+  color: rgb(44, 90, 255) !important;
+  text-decoration: none;
+  font-weight: 800 !important;
+}
+
+.react-calendar__tile {
+  color: black !important;
+}
+
+.react-calendar__tile--active {
+  background: #7c3aed !important; /* Adjust to match your theme's purple/accent color */
+  color: black !important;
+  border-radius: 8px;
+}
+
+.react-calendar__tile:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px;
+}
