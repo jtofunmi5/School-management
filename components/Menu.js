@@ -8,6 +8,7 @@ import { MdMessage, MdOutlineAssignmentInd, MdOutlineSubject } from 'react-icons
 import { SiGoogleclassroom } from 'react-icons/si';
 import { BookOpen, Calendar, Calendar1, CircleUser, FileSearchCorner, LogOut, Settings } from 'lucide-react';
 import { TfiAnnouncement } from 'react-icons/tfi';
+import { role } from '@/lib/data';
 
 
 const menuItems = [
@@ -30,13 +31,13 @@ const menuItems = [
         icon: <PiStudentBold />,
         label: "Student",
         href: "/student",
-        visible: ["admin", "teacher"],
+        visible: ["admin", "student"],
       },
       {
         icon: <RiParentFill />,
         label: "Parent",
         href: "/parent",
-        visible: ["admin", "teacher"],
+        visible: ["admin", "parent"],
       },
       {
         icon: <MdOutlineSubject />,
@@ -137,7 +138,9 @@ const Menu = () => {
           </span>
 
         
-          {i.items.map((item) => (
+          {i.items.map((item) => {
+            if(item.visible.includes(role)) {
+              return (
             <Link
               href={item.href}
               key={item.label}
@@ -146,7 +149,9 @@ const Menu = () => {
               <span> {item.icon} </span>
               <span className="hidden m-0 lg:block ">{item.label}</span>
             </Link>
-          ))}
+          )
+            }
+          })}
         </div>
       ))}
     </div>

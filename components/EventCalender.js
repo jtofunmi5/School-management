@@ -54,16 +54,18 @@ export default function EventCalender() {
         <span className="text-gray-400 cursor-pointer text-xl font-bold">•••</span>
       </div>
     
-      {/* Scrollable container added here */}
+      
       <div className="max-h-[350px] overflow-y-auto pr-2 flex flex-col gap-4">
         {events.map((event) => (
           <div
-            className="p-5 rounded-md border-2 border-gray-100 border-t-4 odd:border-t-amber-950 odd:border-b-amber-950 even:border-t-amber-400"
-            key={event.id} >
+            className="p-5 rounded-md border-2 border-t-4 
+               odd:bg-amber-50/70 odd:border-amber-200 odd:border-t-amber-400 
+               even:bg-blue-50/70 even:border-blue-200 even:border-t-blue-400"
+    key={event.id} >
           
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between ">
               <h1 className="font-semibold text-gray-600">{event.title}</h1>
-              <span className="text-gray-300 text-xs">{event.time}</span>
+              <span className="text-amber-50 p-1 rounded-xs shrink-0  bg-blue-300  text-xs ">{event.time}</span>
             </div>
             <p className="mt-2 text-gray-400 text-sm">{event.description}</p>
           </div>
