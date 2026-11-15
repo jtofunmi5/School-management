@@ -6,9 +6,10 @@ import React from 'react'
 const StudentPage = () => {
   return (
      <div className='p-4 flex flex-col flex-1 min-h-screen xl:flex-row gap-4 w-full'>
-
+ 
 
      <div className='w-full '>
+            <h1 className=" font-semibold text-xl">Schedule (John Doe)</h1>
             <BigCalendar />
       </div>
 

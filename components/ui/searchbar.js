@@ -24,6 +24,9 @@ const Input = () => {
 const StyledWrapper = styled.div`
   /* From uiverse.io by @satyamchaudharydev */
   /* removing default style of button */
+  width:100%;
+  
+
 
   .form button {
     border: none;
@@ -33,7 +36,7 @@ const StyledWrapper = styled.div`
   /* styling of whole input container */
   .form {
     --timing: 0.3s;
-    --width-of-input: 200px;
+    --width-of-input: 100%;
     --height-of-input: 40px;
     --border-height: 2px;
     --input-bg: #fff;
