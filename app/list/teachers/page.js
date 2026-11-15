@@ -64,7 +64,7 @@ const TeachersListPage = () => {
            </div>
         </div>
     </div>
-              <
+              
             <div className='flex border-1 bg-amber-100 border-zinc-950 justify-center'>
                 <ReactPaginate
                   pageCount={10}
