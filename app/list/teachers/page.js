@@ -1,28 +1,40 @@
 'use client'
 import React from 'react'
 import Searchbar from "../../../components/ui/searchbar"
-import { TbFilter2Search } from 'react-icons/tb'
+import { teachersData } from '@/lib/data' 
 import { FaPlus, FaSortAmountDownAlt } from 'react-icons/fa'
 import { MdOutlineSettingsInputComposite } from 'react-icons/md'
 import ReactPaginate from 'react-paginate'
+import Table from '@/components/Table'
 
 
  const columns = [
     {
-        header:"Subject",
-        accessor:"subject",
+        header:"Info",
+        accessor:"info",
+    },
+
+    {
+        header:"Teacher ID",
+        accessor:"teacherId",
+        className:"hidden md:table-cell",
+    },
+
+    {
+        header:"Subjects",
+        accessor:"subjects",
         className:"hidden md:table-cell",
     },
 
     {
         header:"Classes",
-        accessor:"subject",
+        accessor:"classes ",
         className:"hidden md:table-cell",
     },
 
     {
         header:"Phone",
-        accessor:"subject",
+        accessor:"phone",
         className:"hidden lg:table-cell"
     },
 
@@ -35,7 +47,7 @@ import ReactPaginate from 'react-paginate'
     {
         header:"Actions",
         accessor:"action",
-        className:"hidden lg:table-cell"
+        
     }
  ];
 
@@ -51,20 +63,22 @@ const TeachersListPage = () => {
             <Searchbar />
            </div>
 
-           <div className='flex gap-3 self-end md:self-auto '>
-            <span className='bg-amber-300 p-1.5 rounded-2xl'>
-                <MdOutlineSettingsInputComposite  className=' text-lg rounded '/>
-            </span>
-              <span className='bg-amber-300 p-1 rounded-2xl'>
-                <FaSortAmountDownAlt className='rounded text-lg' />
-            </span >
-            <span className='bg-amber-300 p-1 rounded-lg'>
-                <FaPlus className='rounded text-xl'/>
-            </span>
-           </div>
+           <div className="flex items-center gap-4 self-end">
+              <button className="w-8 h-8 flex items-center justify-center rounded-full bg-amber-300">
+              <MdOutlineSettingsInputComposite className="text-base" />
+             </button>
+           <button className="w-8 h-8 flex items-center justify-center rounded-full bg-amber-300">
+              <FaSortAmountDownAlt className="text-sm" />
+          </button>
+          <button className="w-8 h-8 flex items-center justify-center rounded-full bg-amber-300">
+            <FaPlus className="text-sm" />
+           </button>
+         </div>
         </div>
-    </div>
-              
+         </div>
+              <Table columns={columns} />
+
+                  {/* pagination */}
             <div className='flex border-1 bg-amber-100 border-zinc-950 justify-center'>
                 <ReactPaginate
                   pageCount={10}
@@ -74,6 +88,6 @@ const TeachersListPage = () => {
             </div>
     </div>
   )
-}
+};
 
-export default TeachersListPage
+export default TeachersListPage;

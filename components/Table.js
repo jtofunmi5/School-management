@@ -1,10 +1,10 @@
 'use client'
 
-const Table = ({ columns }) => {
+const Table = ({ columns, data = [] }) => {
   return (
-    <table>
+    <table className="w-full mt-4">
       <thead>
-        <tr>
+        <tr className="text-left text-gray-500 text-sm">
           {columns.map((col, index) => (
             <th key={index} className={col.className}>
               {col.header}
@@ -12,7 +12,7 @@ const Table = ({ columns }) => {
           ))}
         </tr>
       </thead>
-      <tbody>
+      <tbody> 
         {/* Render your rows using col.accessor */}
       </tbody>
     </table>
@@ -20,3 +20,8 @@ const Table = ({ columns }) => {
 };
 
 export default Table;
+
+
+
+
+
