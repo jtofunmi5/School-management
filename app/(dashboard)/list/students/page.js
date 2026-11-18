@@ -5,7 +5,7 @@ import { FaPlus, FaSortAmountDownAlt } from 'react-icons/fa'
 import { MdOutlineSettingsInputComposite } from 'react-icons/md'
 import ReactPaginate from 'react-paginate'
 import Table from '@/components/Table'
-import { studentsData, teachersData } from '@/lib/data'
+import { studentsData } from '@/lib/data'
 
  
 
