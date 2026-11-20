@@ -115,7 +115,7 @@ const paginatedData = studentsData.slice(startIndex, endIndex);
                   
             <div className="flex justify-center mt-10">
                <ReactPaginate
-                pageCount={Math.ceil(teachersData.length / itemsPerPage)}
+                pageCount={Math.ceil(studentsData.length / itemsPerPage)}
                 onPageChange={(event) => setCurrentPage(event.selected)}
                 containerClassName="flex items-center gap-2"
                 pageLinkClassName="px-3 py-1.5 border border-gray-300 rounded-md hover:bg-gray-100 cursor-pointer block"
