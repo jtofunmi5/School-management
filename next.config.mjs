@@ -1,20 +1,3 @@
-// /** @type {import('next').NextConfig} */
-// const nextConfig = {
-//   /* config options here */
-//   turbopack: {
-//     root: '.',
-//     rules: {
-//       "*.css": {
-//         loaders: ["@tailwindcss/turbopack"],
-//         as: "*.css",
-//       },
-//     },
-//   },
-// };
-
-// export default nextConfig;
-
-
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -23,6 +6,14 @@ const __dirname = path.dirname(__filename);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.pexels.com',
+      },
+    ],
+  },
   turbopack: {
     root: __dirname,
     rules: {

@@ -27,7 +27,7 @@ const announcementsData = [
 
 const Announcement = () => {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex  flex-col gap-4">
       <h2 className="text-xl font-bold px-1">Announcements</h2>
       {announcementsData.map((item) => (
         <Card key={item.id} className={`${item.color} shadow-sm`}>
